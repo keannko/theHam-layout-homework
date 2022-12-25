@@ -1,5 +1,3 @@
-'use strict'
-
 const array = [{
     code: './image/client-feedback_img/1.png',
     num: '1',
