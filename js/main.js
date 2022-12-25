@@ -1,3 +1,5 @@
+'use strict'
+
 const array = [{
     code: './image/client-feedback_img/1.png',
     num: '1',
@@ -176,11 +178,12 @@ const clientsFeedbackArrows = () => {
     const about = document.querySelector('.client-about')
     let name = document.querySelector('.client-name')
     const prof = document.querySelector('.client-prof')
-    let COUNT = 1
+    
 
     rightArrow.addEventListener('click', e => {
-        COUNT++
+        let COUNT = document.querySelector('.main-avatar').getAttribute('src').split('').slice(-5,-4).toString()
         if (COUNT < 5) {
+            COUNT++
             array.forEach(i => {
                 if (COUNT == i.num) {
                     mainAvatar.setAttribute('src', i.code)
@@ -193,8 +196,9 @@ const clientsFeedbackArrows = () => {
     }
     )
     leftArrow.addEventListener('click', e => {
-        COUNT--
+        let COUNT = document.querySelector('.main-avatar').getAttribute('src').split('').slice(-5,-4).toString()
         if (COUNT > 0) {
+            COUNT--
             array.forEach(i => {
                 if (COUNT == i.num) {
                     mainAvatar.setAttribute('src', i.code)
